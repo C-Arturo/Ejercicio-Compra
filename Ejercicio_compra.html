@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".general .izquierda #auto1").fadeIn(1500)
+            $(".general .derecha #auto2").fadeIn(1500)
+            $(".general .izquierda img").width(300).height(200)
+            $(".general .derecha img").width(300).height(200)
+        })
+        function Comprar(){
+            $(".general .izquierda #auto1").replaceWith("<p>Comprado<p>")               
+        } 
+        function Comprar2(){
+            $(".general .derecha #auto2").replaceWith("<p>Comprado<p>")            
+        } 
+        function Cambiar(){
+            $(".general .izquierda #auto1").attr("src",$(".general .izquierda #auto1").attr("src").replace("Img/auto1.jpg","Img/Auto3.jpg"))              
+        } 
+        function Cambiar2(){
+            $(".general .derecha #auto2").attr("src",$(".general .derecha #auto2").attr("src").replace("Img/Auto2.jpg","Img/Auto4.jpg"))                 
+        } 
+    </script>
+    <style>
+        .general{
+            display: flex;
+            flex-direction: row;
+            margin: 2%;
+        }
+        input{
+            width: 100%;
+        }
+        .compra{
+            background-color: yellowgreen;
+            margin-bottom: 1%;
+        }
+        .cambia{
+             background-color: cadetblue;
+        }
+        .izquierda{
+            margin-right: 2%;
+        }
+    </style>
+</head>
+<body>
+<div class="general">
+    <div class="izquierda">
+    <img src="Img/auto1.jpg" alt="" id="auto1"><br>
+    <input type="submit" value="Comprar" class="compra" onclick="Comprar()"><br>
+    <input type="submit" value="Cambiar" class="cambia" onclick="Cambiar()">   
+    </div>
+    <div class="derecha">
+    <img src="Img/Auto2.jpg" alt="" id="auto2"><br>
+    <input type="submit" value="Comprar" class="compra" onclick="Comprar2()"><br>
+    <input type="submit" value="Cambiar" class="cambia" onclick="Cambiar2()">
+    </div>
+</div>
+</body>
+</html>
